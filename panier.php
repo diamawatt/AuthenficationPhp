@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// Vérifier si l'utilisateur est connecté et n'est pas un administrateur
+// Verifier si l'utilisateur est connecté et n'est pas un administrateur
 if (!isset($_SESSION['user']) || $_SESSION['user'] === "admin") {
     header("Location: formulaire.php");
     exit();
@@ -9,7 +9,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user'] === "admin") {
 
 $user = $_SESSION['user'];
 
-// Vérifier si le panier existe
+// Verifier si le panier existe
 if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = [];
 }
@@ -20,7 +20,7 @@ function removeFromCart($articleTitle) {
     $_SESSION['cart'] = array_values($_SESSION['cart']); // Réindexer le tableau
 }
 
-// Vérifier si un article doit être retiré
+// Verifier si un article doit etre retiré
 if (isset($_GET['remove']) && isset($_GET['title'])) {
     $title = $_GET['title'];
     removeFromCart($title);
@@ -34,7 +34,7 @@ $articles = [
         [
             'title' => 'T-shirt Street',
             'description' => 'Un t-shirt stylé pour représenter la street avec classe.',
-            'image' => 'https://images.rawpixel.com/image_800/cHJpdmF0ZS9zci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTA0L3Jhd3BpeGVsX29mZmljZV80OV9hX3Bob3RvX29mX2FuX292ZXJzaXplZF93aGl0ZV90LXNoaXJ0X2JhY2tfc19jZGVlZmExNS02ZmM0LTQyYTktOWJlOS1iMzk0MjM1MjhjNWQtMDEtbW9ja3VwXzEuanBn.jpg',
+            'image' => 'https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTA0L3Jhd3BpeGVsX29mZmljZV80OV9hX3Bob3RvX29mX2FuX292ZXJzaXplZF93aGl0ZV90LXNoaXJ0X2JhY2tfc19jZGVlZmExNS02ZmM0LTQyYTktOWJlOS1iMzk0MjM1MjhjNWQtMDEtbW9ja3VwXzEuanBn.jpg',
             'price' => 2500
         ],
         [
@@ -92,7 +92,7 @@ $articles = [
     ],
 ];
 
-// Récupérer les articles du panier
+// Recuperer les articles du panier
 $cartItems = [];
 foreach ($_SESSION['cart'] as $title) {
     foreach ($articles as $category => $categoryItems) {
@@ -119,7 +119,6 @@ foreach ($_SESSION['cart'] as $title) {
 </head>
 <body>
 
-<!-- Navbar horizontale -->
 <nav class="navbar navbar-dark bg-dark">
     <div class="container-fluid justify-content-between">
         <span class="navbar-brand">Panier</span>

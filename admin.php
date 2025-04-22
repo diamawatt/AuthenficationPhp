@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// Vérifier que l'utilisateur est admin
+// Verifier que l'utilisateur est admin
 if (!isset($_SESSION['user']) || $_SESSION['user'] !== 'admin') {
     header("Location: login.php");
     exit();
@@ -65,7 +65,6 @@ if (isset($_POST['delete'])) {
 </head>
 <body>
 
-<!-- Navbar horizontale -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <span class="navbar-brand">Tableau de bord - Admin</span>
@@ -79,7 +78,7 @@ if (isset($_POST['delete'])) {
 <div class="container-fluid">
   <div class="row">
 
-    <!-- Sidebar vertical à gauche -->
+    
     <nav class="col-md-2 d-none d-md-block bg-light sidebar" style="min-height:100vh;">
       <div class="position-sticky pt-4">
         <h6 class="px-3 text-muted">Actions</h6>
@@ -103,7 +102,7 @@ if (isset($_POST['delete'])) {
       </div>
     </nav>
 
-    <!-- Contenu principal -->
+
     <main class="col-md-10 ms-sm-auto px-4">
       <div class="pt-4 pb-2">
         <h2 class="text-center">Espace Administrateur 🛠️</h2>
@@ -125,7 +124,6 @@ if (isset($_POST['delete'])) {
           </div>
         </div>
 
-        <!-- Carte Modifier -->
         <div class="col">
           <div class="card border-warning h-100">
             <div class="card-body text-center">
@@ -145,7 +143,6 @@ if (isset($_POST['delete'])) {
           </div>
         </div>
 
-        <!-- Carte Supprimer -->
         <div class="col">
           <div class="card border-danger h-100">
             <div class="card-body text-center">
@@ -167,7 +164,6 @@ if (isset($_POST['delete'])) {
   </div>
 </div>
 
-<!-- Bootstrap Icons -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

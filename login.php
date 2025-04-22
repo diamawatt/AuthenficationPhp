@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Connexion</title>
   <style>
-    /* Reset & basic */
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body, html { height: 100%; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f0f2f5; }
     
@@ -14,13 +14,13 @@
     .card { background: #fff; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); width: 360px; padding: 2rem; }
     h4 { text-align: center; margin-bottom: 1.5rem; color: #333; }
     
-    /* Form fields */
+
     .form-group { margin-bottom: 1rem; }
     label { display: block; font-size: 0.9rem; margin-bottom: 0.3rem; color: #555; }
     input { width: 100%; padding: 0.6rem 0.8rem; border: 1px solid #ddd; border-radius: 6px; font-size: 1rem; transition: border-color 0.2s; }
     input:focus { outline: none; border-color: #667eea; }
     
-    /* Button */
+
     .btn { width: 100%; padding: 0.7rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; font-size: 1rem; font-weight: 500; border: none; border-radius: 6px; cursor: pointer; transition: background 0.3s; }
     .btn:hover { background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%); }
     

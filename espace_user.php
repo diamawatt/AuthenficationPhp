@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// Vérifier si l'utilisateur est connecté et pas un administrateur
+// Verifier si l'utilisateur est connecte et pas un administrateur
 if (!isset($_SESSION['user']) || $_SESSION['user'] === "admin") {
     header("Location: formulaire.php");
     exit();
@@ -9,7 +9,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user'] === "admin") {
 
 $user = $_SESSION['user'];
 
-// Vérifier si le panier existe, sinon initialiser un panier vide
+// Verifier si le panier existe sinon initialiser un panier vide
 if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = [];
 }
@@ -25,10 +25,10 @@ function toggleCart($article) {
     }
 }
 
-// Déterminer la catégorie sélectionnée
+// Determiner la catégorie sélectionnée
 $category = isset($_GET['category']) ? $_GET['category'] : 'tshirts';
 
-// Les articles par catégorie (3 articles par catégorie)
+// Filtrer les articles par catégorie
 $articles = [
     'tshirts' => [
         [
@@ -92,10 +92,10 @@ $articles = [
     ],
 ];
 
-// Sélectionner les articles de la catégorie choisie
+// Selectionner les articles de la categorie choisie
 $selectedArticles = isset($articles[$category]) ? $articles[$category] : [];
 
-// Vérifier si un article a été ajouté ou retiré
+// Verifier si un article a été ajouté ou retiré
 if (isset($_GET['action']) && isset($_GET['title'])) {
     $action = $_GET['action'];
     $title = $_GET['title'];
@@ -168,8 +168,7 @@ if (isset($_GET['action']) && isset($_GET['title'])) {
 
 <div class="container-fluid">
   <div class="row">
-
-    <!-- Contenu principal -->
+  
     <div class="col-md-9 p-4">
       <h2 class="mb-4">Bienvenue dans ton espace privé, <?= htmlspecialchars($user) ?> 👋</h2>
 
@@ -184,13 +183,13 @@ if (isset($_GET['action']) && isset($_GET['title'])) {
                 <p class="card-text"><strong>Prix: <?= number_format($article['price'], 0, ',', ' ') ?> CFA</strong></p>
                 
                 <?php
-                // Vérifier si l'article est dans le panier
                 $isInCart = in_array($article['title'], $_SESSION['cart']);
                 $buttonText = $isInCart ? 'Supprimer du panier' : 'Ajouter au panier';
                 $action = $isInCart ? 'remove' : 'add';
+                $buttonClass = $isInCart ? 'btn-danger' : 'btn-primary';
                 ?>
 
-                <a href="?category=<?= $category ?>&action=<?= $action ?>&title=<?= urlencode($article['title']) ?>" class="btn btn-primary">
+                <a href="?category=<?= $category ?>&action=<?= $action ?>&title=<?= urlencode($article['title']) ?>" class="btn <?= $buttonClass ?>">
                   <?= $buttonText ?>
                 </a>
               </div>
@@ -200,7 +199,6 @@ if (isset($_GET['action']) && isset($_GET['title'])) {
       </div>
     </div>
 
-    <!-- Sidebar verticale à droite -->
     <div class="col-md-3 sidebar p-4">
       <h5 class="mb-3">Catégories</h5>
       <div class="nav flex-column">
