@@ -16,7 +16,7 @@ Ce projet est une solution simple et fonctionnelle d'authentification en PHP nat
 ---
 
 ## 🗂️ Structure du projet
-
+AuthenficationPhp/ ├── admin.php # Interface d'administration ├── espace_user.php # Espace personnel de l'utilisateur ├── formulaire_gest.php # Gestion des formulaires ├── login.php # Page de connexion ├── logout.php # Script de déconnexion ├── panier.php # Panier utilisateur (si activé) ├── articles.json # Données des articles └── README.md #
 
 ---
 
